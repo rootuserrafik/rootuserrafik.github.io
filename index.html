@@ -3,185 +3,905 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="3yHlvit00iziYmXiuqyqlspLgAEz53348QOT1hiFHuU" />
+    <!-- SEO Meta Tags -->
+    <title>Md. Rafikul Islam | Digital Product Builder & Software Engineer</title>
+    <meta name="description" content="Portfolio of Md. Rafikul Islam, a Digital Product Builder and Software Engineer from Bangladesh specializing in React, Next.js, and Node.js. Open to remote work.">
+    <meta name="keywords" content="Md. Rafikul Islam, Digital Product Builder, Software Engineer, Full-Stack Developer, React Developer, Next.js, Node.js, Web Developer Bangladesh">
     <meta name="author" content="Md. Rafikul Islam">
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/glassmorphism.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rootuserrafik.github.io/">
 
-    <title>Home | Md. Rafikul Islam</title>
-    <meta name="description" content="Welcome to the home page of Md. Rafikul Islam's portfolio.">
-    <meta name="keywords" content="portfolio, full-stack developer, home, projects">
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rootuserrafik.github.io/">
+    <meta property="og:title" content="Md. Rafikul Islam | Digital Product Builder & Software Engineer">
+    <meta property="og:description" content="Portfolio of Md. Rafikul Islam, a Digital Product Builder and Software Engineer from Bangladesh specializing in React, Next.js, and Node.js.">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Md. Rafikul Islam | Digital Product Builder">
+    <meta name="twitter:description" content="Portfolio of Md. Rafikul Islam, a Digital Product Builder and Software Engineer from Bangladesh specializing in React, Next.js, and Node.js.">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Md. Rafikul Islam",
+      "jobTitle": "Digital Product Builder",
+      "url": "https://rootuserrafik.github.io/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Bangladesh"
+      },
+      "sameAs": [
+        "https://github.com/rootuserrafik"
+      ]
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --text:    #111827;
+            --sub:     #6b7280;
+            --border:  #e5e7eb;
+            --bg:      #f9fafb;
+            --accent:  #2563eb;
+            --chip-bg: #f3f4f6;
+            --green:   #16a34a;
+            --green-bg:#f0fdf4;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* ── NAV ─────────────────────────────── */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            z-index: 10;
+        }
+
+        .nav-wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 28px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-name { font-weight: 700; font-size: 0.95rem; color: var(--text); }
+
+        .nav-links { display: flex; gap: 2px; list-style: none; }
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--sub);
+            padding: 5px 12px;
+            border-radius: 6px;
+            transition: background 0.15s, color 0.15s;
+        }
+        .nav-links a:hover { background: var(--bg); color: var(--text); text-decoration: none; }
+
+        /* ── PAGE ────────────────────────────── */
+        .page {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 36px 28px 56px;
+        }
+
+        /* ── HERO ────────────────────────────── */
+        .hero {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 24px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 32px;
+        }
+
+        .hero-text h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .hero-role {
+            font-size: 0.95rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .hero-bio {
+            color: var(--sub);
+            font-size: 0.9rem;
+            max-width: 480px;
+            margin-bottom: 14px;
+        }
+
+        .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+        .btn {
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 18px;
+            border-radius: 7px;
+            transition: all 0.15s;
+            display: inline-block;
+        }
+
+        .btn-solid { background: var(--accent); color: #fff; }
+        .btn-solid:hover { background: #1d4ed8; text-decoration: none; }
+
+        .btn-ghost { border: 1px solid var(--border); color: var(--text); }
+        .btn-ghost:hover { border-color: #9ca3af; text-decoration: none; }
+
+        .hero-meta {
+            margin-top: 12px;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item { font-size: 0.82rem; color: var(--sub); }
+        .meta-item b { color: var(--text); font-weight: 500; display: block; font-size: 0.85rem; }
+
+        .avatar {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* ── SECTION ─────────────────────────── */
+        section { margin-bottom: 36px; }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 { font-size: 1.05rem; font-weight: 700; }
+        .section-header span { font-size: 0.8rem; color: var(--sub); }
+
+        /* ── PROJECT CARD ────────────────────── */
+        .project-list { display: flex; flex-direction: column; gap: 14px; }
+
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            transition: box-shadow 0.2s;
+        }
+
+        .project-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+
+        /* Card top row */
+        .project-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .project-name {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .project-meta-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .link-btn {
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 5px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            color: var(--sub);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.15s;
+            white-space: nowrap;
+        }
+
+        .link-btn:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+        .link-btn svg { width: 13px; height: 13px; }
+
+        /* Description */
+        .project-desc {
+            font-size: 0.88rem;
+            color: var(--sub);
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        /* Divider */
+        .project-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 10px 0;
+        }
+
+        /* Features & Impact two-col */
+        .project-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .detail-block-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--sub);
+            margin-bottom: 5px;
+        }
+
+        .feature-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .feature-list li {
+            font-size: 0.85rem;
+            color: var(--text);
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--sub);
+        }
+
+        /* Impact block */
+        .impact-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .impact-list li {
+            font-size: 0.85rem;
+            color: var(--text);
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .impact-list li::before {
+            content: '↑';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-size: 0.8rem;
+        }
+
+        /* Tech stack */
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .chip {
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: var(--chip-bg);
+            color: var(--sub);
+            padding: 3px 9px;
+            border-radius: 4px;
+        }
+
+        /* ── SKILLS ──────────────────────────── */
+        .skills-table { display: flex; flex-direction: column; gap: 14px; }
+
+        .skill-row {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            align-items: baseline;
+            gap: 16px;
+            font-size: 0.9rem;
+        }
+
+        .skill-label { font-weight: 500; font-size: 0.82rem; color: var(--sub); }
+
+        .skill-items { display: flex; flex-wrap: wrap; gap: 6px; }
+
+        /* ── FOOTER ──────────────────────────── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+            font-size: 0.82rem;
+            color: var(--sub);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        footer a { color: var(--sub); }
+        footer a:hover { color: var(--text); text-decoration: none; }
+
+        /* ── RESPONSIVE ──────────────────────── */
+        @media (max-width: 580px) {
+            .hero { flex-direction: column-reverse; gap: 20px; }
+            .avatar { width: 60px; height: 60px; font-size: 1.4rem; }
+            .hero-text h1 { font-size: 1.4rem; }
+            .project-top { flex-direction: column; gap: 10px; }
+            .project-links { flex-direction: row; }
+            .project-detail-grid { grid-template-columns: 1fr; }
+            .skill-row { grid-template-columns: 80px 1fr; }
+            footer { flex-direction: column; }
+        }
+    </style>
 </head>
-
 <body>
 
-    <!-- Header Section -->
-    <div id="header-container"></div>
+<nav>
+    <div class="nav-wrap">
+        <span class="nav-name">Rafikul Islam</span>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </div>
+</nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero__content glass-effect">
-            <h1 class="hero__title">Hello, I'm Md. Rafikul Islam</h1>
-            <p class="hero__subtitle">Full-Stack Developer passionate about building high-quality applications for web and mobile platforms.</p>
-            <a href="#projects" class="button button--primary">Explore My Work</a>
+<div class="page">
+
+    <!-- About -->
+    <section id="about" class="hero">
+        <div class="hero-text">
+            <h1>Md. Rafikul Islam</h1>
+            <p class="hero-role">Building Simple Solutions for Complex Problems</p>
+            <p class="hero-bio">
+                I build digital products that feel simple, even when the problems are complex. Focused on creating seamless, user-first experiences with clean and reliable solutions. Based in Bangladesh, open to remote work.
+            </p>
+            <div class="hero-actions">
+                <a href="https://github.com/rootuserrafik" target="_blank" class="btn btn-solid">GitHub</a>
+                <a href="mailto:contactwithrafik+gitio@gmail.com" class="btn btn-ghost">Email me</a>
+            </div>
+            <div class="hero-meta">
+                <div class="meta-item"><b>Bangladesh</b>Location</div>
+                <div class="meta-item"><b>3+ Years</b>Experience</div>
+                <div class="meta-item"><b>Open to work</b>Status</div>
+            </div>
+        </div>
+        <div class="avatar">R</div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="section-header">
+            <h2>Projects</h2>
+            <span>Selected work &amp; impact</span>
+        </div>
+
+        <div class="project-list">
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-top">
+                    <div>
+                        <p class="project-name">Tally Integration & Order System</p>
+                    </div>
+                    <div class="project-links">
+                        <span class="link-btn" style="color: var(--sub); opacity: 0.7; cursor: not-allowed;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                            Private
+                        </span>
+                        <span class="link-btn" style="color: var(--sub); opacity: 0.7; cursor: not-allowed;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                            Private
+                        </span>
+                    </div>
+                </div>
+                <p class="project-desc">A web portal built to handle order processing and seamless integration with Tally software.</p>
+                
+                <hr class="project-divider">
+
+                <div class="project-detail-grid">
+                    <div>
+                        <p class="detail-block-label">Key Features &amp; Work</p>
+                        <ul class="feature-list">
+                            <li>Real-time order syncing</li>
+                            <li>Tally ERP data export</li>
+                            <li>Automated data mapping</li>
+                            <li>Role-based access control</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="detail-block-label">Impact &amp; Result</p>
+                        <ul class="impact-list">
+                            <li>Reduced manual data entry by 80%</li>
+                            <li>Improved order processing speed</li>
+                            <li>Eliminated syncing errors</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="chip">React.js</span>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-top">
+                    <div>
+                        <p class="project-name">blntrading.com</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://blntrading.com" target="_blank" class="link-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live
+                        </a>
+                        <span class="link-btn" style="color: var(--sub); opacity: 0.7; cursor: not-allowed;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                            Private
+                        </span>
+                    </div>
+                </div>
+                <p class="project-desc">A modern, performant corporate website for BLN Trading.</p>
+
+                <hr class="project-divider">
+
+                <div class="project-detail-grid">
+                    <div>
+                        <p class="detail-block-label">Key Features &amp; Work</p>
+                        <ul class="feature-list">
+                            <li>Responsive corporate design</li>
+                            <li>SEO optimized pages</li>
+                            <li>Fast page load with Next.js</li>
+                            <li>Contact form integration</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="detail-block-label">Impact &amp; Result</p>
+                        <ul class="impact-list">
+                            <li>Increased organic traffic by 40%</li>
+                            <li>Better user engagement</li>
+                            <li>Professional brand presence</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="chip">Next.js</span>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-top">
+                    <div>
+                        <p class="project-name">chowdhuryassociate.com</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://chowdhuryassociate.com" target="_blank" class="link-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live
+                        </a>
+                        <span class="link-btn" style="color: var(--sub); opacity: 0.7; cursor: not-allowed;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                            Private
+                        </span>
+                    </div>
+                </div>
+                <p class="project-desc">A professional business website developed for Chowdhury Associate.</p>
+
+                <hr class="project-divider">
+
+                <div class="project-detail-grid">
+                    <div>
+                        <p class="detail-block-label">Key Features &amp; Work</p>
+                        <ul class="feature-list">
+                            <li>Custom WordPress theme</li>
+                            <li>Service portfolio display</li>
+                            <li>Client testimonial section</li>
+                            <li>Mobile-friendly layout</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="detail-block-label">Impact &amp; Result</p>
+                        <ul class="impact-list">
+                            <li>Improved online visibility</li>
+                            <li>Generated 20% more client leads</li>
+                            <li>Easy content management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="chip">WordPress</span>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-top">
+                    <div>
+                        <p class="project-name">Membership Management System</p>
+                    </div>
+                    <div class="project-links">
+                        <span class="link-btn" style="color: var(--sub); opacity: 0.7; cursor: not-allowed;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                            Private
+                        </span>
+                        <span class="link-btn" style="color: var(--sub); opacity: 0.7; cursor: not-allowed;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                            Private
+                        </span>
+                    </div>
+                </div>
+                <p class="project-desc">A complete web portal for organizations to manage member registrations, renewals, and profiles.</p>
+
+                <hr class="project-divider">
+
+                <div class="project-detail-grid">
+                    <div>
+                        <p class="detail-block-label">Key Features &amp; Work</p>
+                        <ul class="feature-list">
+                            <li>Member registration &amp; profile management</li>
+                            <li>Subscription &amp; fee tracking</li>
+                            <li>Role-based admin dashboards</li>
+                            <li>Automated renewal emails</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="detail-block-label">Impact &amp; Result</p>
+                        <ul class="impact-list">
+                            <li>Reduced manual admin work by 70%</li>
+                            <li>Managed 500+ active members efficiently</li>
+                            <li>Renewal rate improved by 35%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="chip">React.js</span>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card">
+                <div class="project-top">
+                    <div>
+                        <p class="project-name">Customer Management System</p>
+                    </div>
+                    <div class="project-links">
+                        <span class="link-btn" style="color: var(--sub); opacity: 0.7; cursor: not-allowed;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                            Private
+                        </span>
+                        <span class="link-btn" style="color: var(--sub); opacity: 0.7; cursor: not-allowed;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                            Private
+                        </span>
+                    </div>
+                </div>
+                <p class="project-desc">A dedicated web portal for managing customer relationships, tracking interactions, and improving service delivery.</p>
+
+                <hr class="project-divider">
+
+                <div class="project-detail-grid">
+                    <div>
+                        <p class="detail-block-label">Key Features &amp; Work</p>
+                        <ul class="feature-list">
+                            <li>Centralized customer database</li>
+                            <li>Interaction tracking</li>
+                            <li>Sales pipeline visualization</li>
+                            <li>Custom reporting tools</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="detail-block-label">Impact &amp; Result</p>
+                        <ul class="impact-list">
+                            <li>Improved customer retention by 25%</li>
+                            <li>Streamlined sales process</li>
+                            <li>Better team collaboration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="chip">React.js</span>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card">
+                <div class="project-top">
+                    <div>
+                        <p class="project-name">Live Leaderboard</p>
+                    </div>
+                    <div class="project-links">
+                        <span class="link-btn" style="color: var(--sub); opacity: 0.7; cursor: not-allowed;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                            Private
+                        </span>
+                        <span class="link-btn" style="color: var(--sub); opacity: 0.7; cursor: not-allowed;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                            Private
+                        </span>
+                    </div>
+                </div>
+                <p class="project-desc">A real-time leaderboard web portal designed to display live rankings and dynamic data updates.</p>
+
+                <hr class="project-divider">
+
+                <div class="project-detail-grid">
+                    <div>
+                        <p class="detail-block-label">Key Features &amp; Work</p>
+                        <ul class="feature-list">
+                            <li>Real-time data synchronization</li>
+                            <li>Dynamic sorting algorithms</li>
+                            <li>Scalable backend infrastructure</li>
+                            <li>Animated UI transitions</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="detail-block-label">Impact &amp; Result</p>
+                        <ul class="impact-list">
+                            <li>Supported high concurrent users</li>
+                            <li>Zero lag during peak events</li>
+                            <li>Enhanced user engagement</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="chip">React.js</span>
+                    <span class="chip">Node.js</span>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="project-card">
+                <div class="project-top">
+                    <div>
+                        <p class="project-name">Splooge</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://nft-splooge-cln.netlify.app/" target="_blank" class="link-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live
+                        </a>
+                        <span class="link-btn" style="color: var(--sub); opacity: 0.7; cursor: not-allowed;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                            Private
+                        </span>
+                    </div>
+                </div>
+                <p class="project-desc">An NFT-focused web application featuring a modern interface.</p>
+
+                <hr class="project-divider">
+
+                <div class="project-detail-grid">
+                    <div>
+                        <p class="detail-block-label">Key Features &amp; Work</p>
+                        <ul class="feature-list">
+                            <li>NFT collection gallery</li>
+                            <li>Web3 wallet integration</li>
+                            <li>Interactive modern UI</li>
+                            <li>Responsive design</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="detail-block-label">Impact &amp; Result</p>
+                        <ul class="impact-list">
+                            <li>Smooth user experience</li>
+                            <li>Fast loading times</li>
+                            <li>Visually striking presentation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="chip">React.js</span>
+                </div>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="project-card">
+                <div class="project-top">
+                    <div>
+                        <p class="project-name">RuneJack-Canvas</p>
+                    </div>
+                    <div class="project-links">
+                        <span class="link-btn" style="color: var(--sub); opacity: 0.7; cursor: not-allowed;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+                            Private
+                        </span>
+                        <a href="https://github.com/rootuserrafik/02-molto7-RuneJack-Canvas-Code" target="_blank" class="link-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <p class="project-desc">A canvas-based HTML5 project implementing game logic and graphics rendering.</p>
+
+                <hr class="project-divider">
+
+                <div class="project-detail-grid">
+                    <div>
+                        <p class="detail-block-label">Key Features &amp; Work</p>
+                        <ul class="feature-list">
+                            <li>HTML5 Canvas rendering</li>
+                            <li>Game loop implementation</li>
+                            <li>Collision detection algorithms</li>
+                            <li>Interactive controls</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="detail-block-label">Impact &amp; Result</p>
+                        <ul class="impact-list">
+                            <li>Consistent 60 FPS performance</li>
+                            <li>Lightweight implementation</li>
+                            <li>Engaging gameplay experience</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="chip">HTML</span>
+                    <span class="chip">JavaScript</span>
+                </div>
+            </div>
+
+            <!-- Project 9 -->
+            <div class="project-card">
+                <div class="project-top">
+                    <div>
+                        <p class="project-name">Product Management Admin Panel</p>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://product-admin-management.netlify.app/" target="_blank" class="link-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live
+                        </a>
+                        <a href="https://github.com/rootuserrafik/react-task" target="_blank" class="link-btn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.54-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.48.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.57 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                    </div>
+                </div>
+                <p class="project-desc">An administrative dashboard for managing products, featuring a responsive UI.</p>
+
+                <hr class="project-divider">
+
+                <div class="project-detail-grid">
+                    <div>
+                        <p class="detail-block-label">Key Features &amp; Work</p>
+                        <ul class="feature-list">
+                            <li>CRUD operations for products</li>
+                            <li>Data visualization charts</li>
+                            <li>Secure authentication</li>
+                            <li>State management</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="detail-block-label">Impact &amp; Result</p>
+                        <ul class="impact-list">
+                            <li>Improved data management efficiency</li>
+                            <li>Reduced admin overhead</li>
+                            <li>Streamlined product updates</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tech-stack">
+                    <span class="chip">React.js</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <!-- Projects Section -->
-<section id="projects" class="projects">
-    <h2 class="projects__heading">Client Projects</h2>
-    
-    <div class="projects__container">
-        <!-- 70% Main Project Area -->
-         <!-- Full Projects Slider -->
-<div class="projects__slider-container">
-    
-    <div class="projects__main-slider">
-        <!-- First Slide -->
-        <div class="projects__main slide active">
-            <div class="project__info">
-                <div class="projects__main-left">
-                    <div class="projects__slider">
-                        <img src="https://placehold.co/600x400" alt="Project 1 Image">
-                    </div>
-                </div>
-                <div class="projects__main-right">
-                    <h3 class="projects__title">Project 1 Title</h3>
-                    <p class="projects__description">This is the detailed description for Project 1. It includes technologies used and the purpose.</p>
-                    <div class="projects__tags">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
+    <!-- Skills -->
+    <section id="skills">
+        <div class="section-header">
+            <h2>Skills</h2>
+        </div>
+        <div class="skills-table">
+            <div class="skill-row">
+                <span class="skill-label">Frontend</span>
+                <div class="skill-items">
+                    <span class="chip">HTML</span><span class="chip">CSS</span>
+                    <span class="chip">JavaScript</span><span class="chip">React</span>
+                    <span class="chip">Next.js</span><span class="chip">React Native</span>
                 </div>
             </div>
-            <!-- Projects Details and Slider Links -->
-            <div class="projects__details">
-                <a href="#" class="slider__prev" onclick="prevSlide()">&#60;</a>
-                <span class="project__meta">
-                    <strong>Cost:</strong> $5000 | 
-                    <strong>Duration:</strong> 3 months | 
-                    <strong>Industry:</strong> E-commerce
-                </span>
-                <a href="#" class="slider__next" onclick="nextSlide()">&#62;</a>
+            <div class="skill-row">
+                <span class="skill-label">Backend</span>
+                <div class="skill-items">
+                    <span class="chip">Node.js</span><span class="chip">Express</span>
+                    <span class="chip">PHP</span><span class="chip">REST APIs</span>
+                </div>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Databases</span>
+                <div class="skill-items">
+                    <span class="chip">MongoDB</span><span class="chip">MySQL</span>
+                    <span class="chip">PostgreSQL</span><span class="chip">Firebase</span>
+                    <span class="chip">Redis</span>
+                </div>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Tools</span>
+                <div class="skill-items">
+                    <span class="chip">Git</span><span class="chip">GitHub</span>
+                    <span class="chip">Docker</span><span class="chip">Linux</span>
+                    <span class="chip">Postman</span>
+                </div>
             </div>
         </div>
+    </section>
 
-        <!-- Second Slide -->
-        <div class="projects__main slide">
-            <div class="project__info">
-                <div class="projects__main-left">
-                    <div class="projects__slider">
-                        <img src="https://placehold.co/600x400" alt="Project 2 Image">
-                    </div>
-                </div>
-                <div class="projects__main-right">
-                    <h3 class="projects__title">Project 2 Title</h3>
-                    <p class="projects__description">This is the detailed description for Project 2. It includes technologies used and the purpose.</p>
-                    <div class="projects__tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">API</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Projects Details and Slider Links -->
-            <div class="projects__details">
-                <a href="#" class="slider__prev" onclick="prevSlide()">&#60;</a>
-                <span class="project__meta">
-                    <strong>Cost:</strong> $8000 | 
-                    <strong>Duration:</strong> 4 months | 
-                    <strong>Industry:</strong> Healthcare
-                </span>
-                <a href="#" class="slider__next" onclick="nextSlide()">&#62;</a>
-            </div>
-        </div>
-        
-        <!-- Additional slides can be added similarly -->
-    </div>
+    <footer>
+        <span>© 2024 Md. Rafikul Islam</span>
+        <span>
+            <a href="https://github.com/rootuserrafik" target="_blank">GitHub</a> ·
+            <a href="mailto:contactwithrafik+gitio@gmail.com">Email</a>
+        </span>
+    </footer>
 
 </div>
 
-
-
-
-        <!-- 30% Other Projects Area -->
-        <div class="projects__others">
-            <!-- Other Projects (1:1 boxes) -->
-            <div class="projects__other-item">
-                <img src="https://placehold.co/400x400" alt="Other Project Image">
-            </div>
-            <div class="projects__other-item">
-                <img src="https://placehold.co/400x400" alt="Other Project Image">
-            </div>
-            <!-- Project Count Box -->
-            <div class="projects__count">
-                <p>10+ Projects Completed</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-
-<div id="footer-container"></div>
-
-    <!-- JavaScript Files -->
-    <script src="assets/js/smooth-scroll.js"></script>
-    <script src="assets/js/main.js"></script><script>
-        // Load the header.html dynamically
-        fetch('common/header.html')
-            .then(response => response.text())
-            .then(data => {
-                // Insert the loaded header HTML into the container
-                document.getElementById('header-container').innerHTML = data;
-    
-                // Now that the header is loaded, set the active tab
-                document.querySelectorAll('.navbar__link').forEach(link => {
-                    if (link.href === window.location.href) {
-                        link.classList.add('active');
-                    }
-                });
-            })
-            .catch(error => console.error('Error loading header:', error));
-    </script>
-    
-    <script>
-        // Load the footer.html dynamically
-        fetch('common/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            });
-    </script>
-    <script>
-       let currentSlide = 0;
-const projectSlides = document.querySelectorAll('.projects__main');
-
-function showSlide(index) {
-    projectSlides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) {
-            slide.classList.add('active');
-        }
-    });
-}
-
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % projectSlides.length;
-    showSlide(currentSlide);
-}
-
-function prevSlide() {
-    currentSlide = (currentSlide - 1 + projectSlides.length) % projectSlides.length;
-    showSlide(currentSlide);
-}
-
-// Initialize the first slide as active
-showSlide(currentSlide);
-
-    </script>
 </body>
 </html>
