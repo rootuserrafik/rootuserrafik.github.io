@@ -12,6 +12,11 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://rootuserrafik.github.io/">
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="shortcut icon" type="image/png" href="assets/images/logo.png">
+    <link rel="apple-touch-icon" href="assets/images/logo.png">
+
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rootuserrafik.github.io/">
@@ -393,10 +398,14 @@
 
 <nav>
     <div class="nav-wrap">
-        <span class="nav-name">Rafikul Islam</span>
+        <a href="#" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+            <img src="assets/images/logo.png" alt="Logo" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border);">
+            <span class="nav-name">Rafikul Islam</span>
+        </a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#tools">Tools</a></li>
             <li><a href="#skills">Skills</a></li>
         </ul>
     </div>
@@ -422,7 +431,9 @@
                 <div class="meta-item"><b>Open to work</b>Status</div>
             </div>
         </div>
-        <div class="avatar">R</div>
+        <div class="avatar" style="background: none; border: 2px solid var(--border); overflow: hidden; padding: 0;">
+            <img src="assets/images/logo.png" alt="Md. Rafikul Islam Logo" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
     </section>
 
     <!-- Projects -->
@@ -852,6 +863,126 @@
 
         </div>
     </section>
+
+    <!-- Tools -->
+    <section id="tools">
+        <div class="section-header">
+            <h2>Business &amp; Developer Tools</h2>
+            <span>Explore my premium automations &amp; free developer scripts</span>
+        </div>
+
+        <!-- Tab Buttons -->
+        <div style="display: flex; gap: 10px; margin-bottom: 2rem; flex-wrap: wrap;">
+            <button id="tab-business" onclick="switchTab('business')" style="padding: 8px 20px; border-radius: 6px; border: 1px solid var(--accent); background: var(--accent); color: #fff; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.2s;">💼 Business Tools</button>
+            <button id="tab-internal" onclick="switchTab('internal')" style="padding: 8px 20px; border-radius: 6px; border: 1px solid var(--border); background: transparent; color: var(--sub); font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.2s;">🛠️ Internal / Free Tools</button>
+        </div>
+
+        <!-- Business Tools -->
+        <div id="tools-business" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="project-card" style="padding: 1.5rem;">
+                <p class="project-name">WhatsApp Marketing Automator</p>
+                <p style="font-size: 0.78rem; color: var(--accent); font-weight: 700; margin: 4px 0 10px;">Premium</p>
+                <p class="project-desc" style="font-size: 0.92rem;">A complete outreach &amp; marketing CRM built on the WhatsApp Cloud API. Send bulk campaigns, manage leads, and set up auto-replies.</p>
+                <div style="margin-top: 16px;"><a href="https://rootuserrafik.pages.dev/tools/whatsapp-marketing" target="_blank" rel="noopener noreferrer" class="btn btn-solid" style="padding: 6px 16px; font-size: 0.88rem;">Explore Tool ↗</a></div>
+            </div>
+            <div class="project-card" style="padding: 1.5rem;">
+                <p class="project-name">Tally ERP Prime Sync Connector</p>
+                <p style="font-size: 0.78rem; color: var(--accent); font-weight: 700; margin: 4px 0 10px;">Premium</p>
+                <p class="project-desc" style="font-size: 0.92rem;">Automated order &amp; invoice sync connecting Shopify, WooCommerce or MERN apps to Tally ERP Prime. Reduces data entry errors to 0%.</p>
+                <div style="margin-top: 16px;"><a href="https://rootuserrafik.pages.dev/tools/tally-connector" target="_blank" rel="noopener noreferrer" class="btn btn-solid" style="padding: 6px 16px; font-size: 0.88rem;">Explore Tool ↗</a></div>
+            </div>
+            <div class="project-card" style="padding: 1.5rem;">
+                <p class="project-name">AI Custom Business Chatbot</p>
+                <p style="font-size: 0.78rem; color: var(--accent); font-weight: 700; margin: 4px 0 10px;">Premium</p>
+                <p class="project-desc" style="font-size: 0.92rem;">Custom conversational AI trained on your business data. Qualifies leads, books meetings, and answers queries 24/7 on any website.</p>
+                <div style="margin-top: 16px;"><a href="https://rootuserrafik.pages.dev/tools/ai-assistant" target="_blank" rel="noopener noreferrer" class="btn btn-solid" style="padding: 6px 16px; font-size: 0.88rem;">Explore Tool ↗</a></div>
+            </div>
+            <div class="project-card" style="padding: 1.5rem;">
+                <p class="project-name">B2B Lead Scraper Hub</p>
+                <p style="font-size: 0.78rem; color: var(--accent); font-weight: 700; margin: 4px 0 10px;">Premium</p>
+                <p class="project-desc" style="font-size: 0.92rem;">High-speed Google Maps scraper that extracts business names, emails, phones, ratings, and social links based on your search criteria.</p>
+                <div style="margin-top: 16px;"><a href="https://rootuserrafik.pages.dev/tools/maps-extractor" target="_blank" rel="noopener noreferrer" class="btn btn-solid" style="padding: 6px 16px; font-size: 0.88rem;">Explore Tool ↗</a></div>
+            </div>
+        </div>
+
+        <!-- Internal / Free Tools -->
+        <div id="tools-internal" style="display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="project-card" style="padding: 1.5rem;">
+                <p class="project-name">JSON Formatter &amp; Validator</p>
+                <p style="font-size: 0.78rem; color: #22c55e; font-weight: 700; margin: 4px 0 10px;">✅ Free — Browser Tool</p>
+                <p class="project-desc" style="font-size: 0.92rem;">Clean, validate, beautify, and minify raw JSON payloads locally in your browser.</p>
+                <div style="margin-top: 16px;"><a href="https://rootuserrafik.pages.dev/tools/json-formatter" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding: 6px 16px; font-size: 0.88rem;">Open Tool Workspace ↗</a></div>
+            </div>
+            <div class="project-card" style="padding: 1.5rem;">
+                <p class="project-name">Base64 Encoder &amp; Decoder</p>
+                <p style="font-size: 0.78rem; color: #22c55e; font-weight: 700; margin: 4px 0 10px;">✅ Free — Browser Tool</p>
+                <p class="project-desc" style="font-size: 0.92rem;">Safely encode binary or string data to Base64, and decode back to plaintext locally.</p>
+                <div style="margin-top: 16px;"><a href="https://rootuserrafik.pages.dev/tools/base64-encoder" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding: 6px 16px; font-size: 0.88rem;">Open Tool Workspace ↗</a></div>
+            </div>
+            <div class="project-card" style="padding: 1.5rem;">
+                <p class="project-name">URL Encoder &amp; Decoder</p>
+                <p style="font-size: 0.78rem; color: #22c55e; font-weight: 700; margin: 4px 0 10px;">✅ Free — Browser Tool</p>
+                <p class="project-desc" style="font-size: 0.92rem;">Encode strings to safe URL components, and decode back — instantly in your browser.</p>
+                <div style="margin-top: 16px;"><a href="https://rootuserrafik.pages.dev/tools/url-encoder" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding: 6px 16px; font-size: 0.88rem;">Open Tool Workspace ↗</a></div>
+            </div>
+            <div class="project-card" style="padding: 1.5rem;">
+                <p class="project-name">Secure Password Generator</p>
+                <p style="font-size: 0.78rem; color: #22c55e; font-weight: 700; margin: 4px 0 10px;">✅ Free — Browser Tool</p>
+                <p class="project-desc" style="font-size: 0.92rem;">Generate randomized cryptographic strength passwords &amp; GUIDs locally in your browser.</p>
+                <div style="margin-top: 16px;"><a href="https://rootuserrafik.pages.dev/tools/password-generator" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding: 6px 16px; font-size: 0.88rem;">Open Tool Workspace ↗</a></div>
+            </div>
+            <div class="project-card" style="padding: 1.5rem;">
+                <p class="project-name">JWT Debugger &amp; Decoder</p>
+                <p style="font-size: 0.78rem; color: #22c55e; font-weight: 700; margin: 4px 0 10px;">✅ Free — Browser Tool</p>
+                <p class="project-desc" style="font-size: 0.92rem;">Decode and inspect JSON Web Tokens (JWT) locally to view header, payload, and signature data.</p>
+                <div style="margin-top: 16px;"><a href="https://rootuserrafik.pages.dev/tools/jwt-debugger" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding: 6px 16px; font-size: 0.88rem;">Open Tool Workspace ↗</a></div>
+            </div>
+            <div class="project-card" style="padding: 1.5rem;">
+                <p class="project-name">Unix Timestamp Converter</p>
+                <p style="font-size: 0.78rem; color: #22c55e; font-weight: 700; margin: 4px 0 10px;">✅ Free — Browser Tool</p>
+                <p class="project-desc" style="font-size: 0.92rem;">Convert Unix epoch timestamps to human-readable dates and vice-versa instantly.</p>
+                <div style="margin-top: 16px;"><a href="https://rootuserrafik.pages.dev/tools/timestamp-converter" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding: 6px 16px; font-size: 0.88rem;">Open Tool Workspace ↗</a></div>
+            </div>
+            <div class="project-card" style="padding: 1.5rem;">
+                <p class="project-name">Hash &amp; HMAC Generator</p>
+                <p style="font-size: 0.78rem; color: #22c55e; font-weight: 700; margin: 4px 0 10px;">✅ Free — Browser Tool</p>
+                <p class="project-desc" style="font-size: 0.92rem;">Generate MD5, SHA-1, SHA-256, and SHA-512 cryptographic hashes locally in your browser.</p>
+                <div style="margin-top: 16px;"><a href="https://rootuserrafik.pages.dev/tools/hash-generator" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding: 6px 16px; font-size: 0.88rem;">Open Tool Workspace ↗</a></div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="https://rootuserrafik.pages.dev/tools" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">View All 10+ Tools ↗</a>
+        </div>
+    </section>
+
+    <script>
+        function switchTab(tab) {
+            const business = document.getElementById('tools-business');
+            const internal = document.getElementById('tools-internal');
+            const btnBusiness = document.getElementById('tab-business');
+            const btnInternal = document.getElementById('tab-internal');
+            if (tab === 'business') {
+                business.style.display = 'grid';
+                internal.style.display = 'none';
+                btnBusiness.style.background = 'var(--accent)';
+                btnBusiness.style.color = '#fff';
+                btnBusiness.style.borderColor = 'var(--accent)';
+                btnInternal.style.background = 'transparent';
+                btnInternal.style.color = 'var(--sub)';
+                btnInternal.style.borderColor = 'var(--border)';
+            } else {
+                business.style.display = 'none';
+                internal.style.display = 'grid';
+                btnInternal.style.background = 'var(--accent)';
+                btnInternal.style.color = '#fff';
+                btnInternal.style.borderColor = 'var(--accent)';
+                btnBusiness.style.background = 'transparent';
+                btnBusiness.style.color = 'var(--sub)';
+                btnBusiness.style.borderColor = 'var(--border)';
+            }
+        }
+    </script>
 
     <!-- Skills -->
     <section id="skills">
